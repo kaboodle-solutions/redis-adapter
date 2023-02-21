@@ -154,7 +154,7 @@ class RedisCachePool extends AbstractCachePool implements HierarchicalPoolInterf
     protected function getList($name)
     {
         $data = $this->cache->sMembers($name);
-        return $data === null ? [] : $data;
+        return $data === false ? [] : $data;
     }
 
     /**
